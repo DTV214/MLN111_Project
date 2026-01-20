@@ -4,7 +4,7 @@ import TopicBook from "@/components/sections/TopicBook"; // Import Flipbook
 import LegacyComparison from "@/components/sections/LegacyComparison"; // Import So sánh
 import AlternatingFeatures from "@/components/sections/AlternatingFeatures";
 import PracticalExamples from "@/components/sections/PracticalExamples";
-// import NewsSection from "@/components/sections/NewsSection";
+import NewsSection from "@/components/sections/NewsSection";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
       <PracticalExamples />
 
       {/* Banner 5: News */}
-      {/* <NewsSection /> */}
+      <NewsSection />
     </div>
   );
 }
