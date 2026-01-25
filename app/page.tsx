@@ -5,11 +5,14 @@ import LegacyComparison from "@/components/sections/LegacyComparison"; // Import
 import AlternatingFeatures from "@/components/sections/AlternatingFeatures";
 import PracticalExamples from "@/components/sections/PracticalExamples";
 import NewsSection from "@/components/sections/NewsSection";
+import HypothesisSection from "@/components/sections/HypothesisSection";
+import ReferenceSection from "@/components/sections/ReferenceSection";
 
 export default function Home() {
   return (
     <div className="flex flex-col gap-0">
       <HeroSection />
+      <HypothesisSection />
 
       {/* Banner 2: Carousel */}
       <ImageCarousel />
@@ -27,7 +30,9 @@ export default function Home() {
       <PracticalExamples />
 
       {/* Banner 5: News */}
-      <NewsSection />
+      {/* <NewsSection /> */}
+
+      <ReferenceSection />
     </div>
   );
 }

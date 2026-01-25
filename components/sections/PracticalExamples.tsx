@@ -1,234 +1,275 @@
-// components/sections/PracticalExamples.tsx
+"use client";
+import { motion } from "framer-motion";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
   CardDescription,
-  CardFooter,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
-  TrendingUp,
-  TrendingDown,
   Activity,
   Server,
   ShieldAlert,
-  ArrowRight,
-  Database,
-  Clock,
+  Zap,
+  TrendingDown,
+  Layers,
+  Cpu,
 } from "lucide-react";
 
 export default function PracticalExamples() {
   return (
     <section
       id="practical"
-      className="py-24 bg-slate-50 border-y border-slate-200"
+      className="py-24 bg-slate-50 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
-        {/* --- HEADER SECTION --- */}
+      {/* Tech Background Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      ></div>
+
+      {/* Decorative Blur Spots */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-yellow-200/40 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/2"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* --- HEADER --- */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
-          <Badge
-            variant="outline"
-            className="mb-6 text-yellow-700 border-yellow-400 bg-yellow-50 px-4 py-1.5 text-sm font-bold uppercase tracking-wider"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            Real-world Evidence
-          </Badge>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
-            Từ Lý Luận đến <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600">
-              Thực Tiễn Kỹ Thuật
-            </span>
-          </h2>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            Dữ liệu thực tế chứng minh quy luật Phủ định của phủ định không chỉ
-            là lý thuyết suông. Nó hiện hữu trong từng dòng code, từng kiến trúc
-            hệ thống của các tập đoàn công nghệ hàng đầu.
-          </p>
+            <Badge
+              variant="outline"
+              className="mb-6 text-blue-600 border-blue-200 bg-white px-4 py-1.5 text-sm font-bold uppercase tracking-wider shadow-sm backdrop-blur-sm"
+            >
+              Chương 3: Thực trạng & Giải pháp
+            </Badge>
+            <h2 className="font-serif text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
+              Dữ Liệu{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+                Thực Tiễn
+              </span>{" "}
+              <br />& Bức Tranh Chuyển Đổi
+            </h2>
+            <p className="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">
+              Từ những con số biết nói của Amazon đến nghịch lý tồn tại của
+              COBOL – Những bằng chứng sống động minh họa cho quy luật phủ định
+              của phủ định.
+            </p>
+          </motion.div>
         </div>
 
-        {/* --- MAIN GRID CONTENT --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* CỘT TRÁI: TIMELINE CHI TIẾT (AMAZON CASE) - Chiếm 7 phần */}
-          <div className="lg:col-span-7 space-y-8">
-            <Card className="h-full border-none shadow-xl bg-white overflow-hidden">
-              <CardHeader className="bg-slate-900 text-white p-8">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <Badge className="bg-yellow-500 text-slate-900 hover:bg-yellow-400 mb-3 font-bold">
-                      CASE STUDY ĐIỂN HÌNH
-                    </Badge>
-                    <CardTitle className="font-serif text-3xl">
-                      Hành trình của Amazon Prime Video
-                    </CardTitle>
-                    <CardDescription className="text-slate-400 mt-2 text-base">
-                      Minh chứng cho vòng xoáy trôn ốc: Monolith → Microservices
-                      → Modular Monolith
-                    </CardDescription>
-                  </div>
-                  <Server className="w-12 h-12 text-slate-700" />
-                </div>
-              </CardHeader>
+          {/* --- LEFT COLUMN: AMAZON CASE STUDY (Highlight) --- */}
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="h-full"
+            >
+              <Card className="h-full border-none shadow-2xl overflow-hidden group relative bg-white ring-1 ring-slate-200/50">
+                {/* Decorative Top Border Gradient */}
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-400 via-pink-500 to-purple-500"></div>
 
-              <CardContent className="p-8">
-                {/* Timeline Visual */}
-                <div className="relative border-l-2 border-slate-200 ml-4 space-y-10 pb-4">
-                  {/* Giai đoạn 1 */}
-                  <div className="relative pl-8 group">
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm group-hover:bg-yellow-500 transition-colors" />
-                    <div className="flex items-center gap-3 mb-2">
-                      <Badge
-                        variant="outline"
-                        className="font-mono text-slate-500"
-                      >
-                        2015
-                      </Badge>
-                      <h4 className="font-bold text-slate-800 text-lg">
-                        Khởi đầu phân tán (Microservices)
-                      </h4>
+                <CardHeader className="p-8 pb-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 border-none px-3">
+                          Amazon Prime Video
+                        </Badge>
+                        <span className="text-xs text-slate-400 font-mono font-bold bg-slate-100 px-2 py-1 rounded">
+                          2023
+                        </span>
+                      </div>
+                      <CardTitle className="font-serif text-3xl md:text-4xl text-slate-900 leading-tight">
+                        Cú Quay Xe Lịch Sử
+                      </CardTitle>
+                      <CardDescription className="text-slate-500 mt-2 text-base font-medium">
+                        Từ Microservices trở về Monolith: Bước lùi chiến lược
+                        hay sự tiến hóa tất yếu?
+                      </CardDescription>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
-                      Amazon chuyển sang kiến trúc Serverless/Microservices để
-                      tách nhỏ hệ thống.
-                      <br />
-                      <span className="italic text-sm text-slate-400">
-                        Mục đích: Tăng tốc độ deploy, tách biệt trách nhiệm.
-                      </span>
-                    </p>
+                    <div className="p-4 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl shadow-inner">
+                      <Server className="w-8 h-8 text-orange-600" />
+                    </div>
                   </div>
+                </CardHeader>
 
-                  {/* Giai đoạn 2: Mâu thuẫn */}
-                  <div className="relative pl-8 group">
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-red-400 rounded-full border-4 border-white shadow-sm group-hover:scale-125 transition-transform" />
-                    <div className="flex items-center gap-3 mb-2">
-                      <Badge
-                        variant="destructive"
-                        className="bg-red-100 text-red-700 border-red-200"
-                      >
-                        Critical Issue
-                      </Badge>
-                      <h4 className="font-bold text-red-700 text-lg">
-                        Điểm gãy (The Breaking Point)
-                      </h4>
+                <CardContent className="p-8 pt-4 space-y-8">
+                  {/* Comparison Visualization Box */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Bad State */}
+                    <div className="p-5 rounded-2xl bg-red-50/80 border border-red-100 text-center relative overflow-hidden group/box hover:bg-red-50 transition-colors">
+                      <div className="absolute -right-6 -top-6 w-20 h-20 bg-red-200 rounded-full blur-2xl group-hover/box:scale-150 transition-transform duration-500"></div>
+                      <Layers className="w-6 h-6 text-red-400 mx-auto mb-3" />
+                      <p className="text-[10px] font-bold text-red-500 uppercase tracking-widest mb-1 relative z-10">
+                        Microservices
+                      </p>
+                      <div className="text-lg md:text-2xl font-black text-slate-800 mb-1 relative z-10">
+                        Overkill
+                      </div>
+                      <p className="text-[10px] text-slate-500 relative z-10 font-medium">
+                        Chi phí cao, quá phức tạp
+                      </p>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
-                      Hệ thống gặp vấn đề nghiêm trọng về{" "}
-                      <strong>chi phí</strong> và <strong>hiệu năng</strong>.
-                      Việc luân chuyển dữ liệu giữa các services tốn kém quá
-                      nhiều tài nguyên mạng.
-                      <br />
-                      <span className="font-bold text-red-500 text-sm">
-                        → Chạm giới hạn AWS Step Functions.
-                      </span>
-                    </p>
+                    {/* Good State */}
+                    <div className="p-5 rounded-2xl bg-emerald-50/80 border border-emerald-100 text-center relative overflow-hidden group/box hover:bg-emerald-50 transition-colors shadow-sm">
+                      <div className="absolute -right-6 -top-6 w-20 h-20 bg-emerald-200 rounded-full blur-2xl group-hover/box:scale-150 transition-transform duration-500"></div>
+                      <Cpu className="w-6 h-6 text-emerald-500 mx-auto mb-3" />
+                      <p className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-1 relative z-10">
+                        Modular Monolith
+                      </p>
+                      <div className="text-lg md:text-2xl font-black text-emerald-600 mb-1 relative z-10 flex items-center justify-center gap-1">
+                        <TrendingDown className="w-5 h-5" /> 90% Cost
+                      </div>
+                      <p className="text-[10px] text-emerald-600/80 relative z-10 font-medium">
+                        Hiệu quả tối ưu hóa
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Giai đoạn 3: Phủ định của phủ định */}
-                  <div className="relative pl-8 group">
-                    <div className="absolute -left-[9px] top-0 w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-sm animate-pulse" />
-                    <div className="flex items-center gap-3 mb-2">
-                      <Badge className="bg-green-100 text-green-700 hover:bg-green-200 border-green-200">
-                        2023 - Hiện tại
-                      </Badge>
-                      <h4 className="font-bold text-green-700 text-lg">
-                        Hồi quy thông minh (Modular Monolith)
-                      </h4>
+                  {/* Timeline Analysis */}
+                  <div className="space-y-0">
+                    <div className="flex gap-4 items-start relative pb-8">
+                      {/* Connecting Line */}
+                      <div className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-slate-200"></div>
+                      <div className="mt-1 w-8 h-8 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center shrink-0 z-10 shadow-sm text-slate-500 text-xs font-bold">
+                        1
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-800 text-sm">
+                          Vấn đề: Giới hạn cứng (Hard Limit)
+                        </h4>
+                        <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                          Hệ thống serverless chạm ngưỡng giới hạn của AWS Step
+                          Functions, chi phí vận hành tăng phi mã.
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
-                      Gộp các components lại thành một khối thống nhất
-                      (Monolith) nhưng giữ cấu trúc module bên trong.
-                      <br />
-                      <span className="font-bold text-slate-800 text-sm">
-                        → Kết quả: Kế thừa ưu điểm của cả hai mô hình.
-                      </span>
-                    </p>
+                    <div className="flex gap-4 items-start relative">
+                      <div className="mt-1 w-8 h-8 rounded-full bg-yellow-400 border-4 border-yellow-100 flex items-center justify-center shrink-0 z-10 shadow-md">
+                        <Zap className="w-4 h-4 text-white fill-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-800 text-sm">
+                          Giải pháp: Hợp nhất (Consolidation)
+                        </h4>
+                        <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                          Gộp các components thành một process (Monolith) nhưng
+                          giữ cấu trúc module. Loại bỏ network calls tốn kém.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
 
-          {/* CỘT PHẢI: SỐ LIỆU & CASE PHỤ - Chiếm 5 phần */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
-            {/* 1. KẾT QUẢ ĐỊNH LƯỢNG (DASHBOARD STYLE) */}
-            <Card className="bg-slate-900 text-white border-none shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Activity className="w-32 h-32" />
-              </div>
-              <CardHeader>
-                <CardTitle className="font-serif text-xl text-yellow-400 border-b border-slate-700 pb-4 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5" /> Hiệu quả Tái cấu trúc
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="pt-6">
-                <div className="grid grid-cols-2 gap-8 text-center">
-                  <div className="space-y-2">
-                    <span className="text-5xl md:text-6xl font-black text-emerald-400 tracking-tighter block">
-                      -90%
-                    </span>
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-                      Chi phí vận hành
-                    </span>
-                  </div>
-                  <div className="space-y-2">
-                    <span className="text-5xl md:text-6xl font-black text-yellow-400 tracking-tighter block">
-                      X5
-                    </span>
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-                      Tốc độ xử lý
-                    </span>
-                  </div>
-                </div>
-                <div className="mt-8 p-4 bg-slate-800 rounded-lg text-sm text-slate-300 italic">
-                  Chúng tôi nhận ra rằng Microservices không phải là viên đạn
-                  bạc. Quay về Monolith là quyết định đúng đắn nhất.
-                  <div className="mt-2 text-right text-yellow-500 font-bold not-italic">
-                    — Amazon Tech Blog
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          {/* --- RIGHT COLUMN: STATS & COBOL --- */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            {/* STATS CARD (Dark Theme Accent) */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="bg-slate-900 border-none text-white shadow-2xl relative overflow-hidden h-full min-h-[280px] flex flex-col justify-between group">
+                {/* Background Animation */}
+                <div className="absolute top-[-50%] right-[-50%] w-[100%] h-[100%] bg-blue-600/30 rounded-full blur-[100px] group-hover:opacity-50 transition-opacity duration-700"></div>
 
-            {/* 2. CASE STUDY PHỤ: NGHỊCH LÝ COBOL (Lấy từ Doc của bạn) */}
-            <Card className="bg-white border-l-4 border-l-blue-500 shadow-lg hover:shadow-xl transition-shadow">
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-2 mb-2">
-                  <ShieldAlert className="w-5 h-5 text-blue-500" />
-                  <span className="text-xs font-bold text-blue-600 uppercase">
-                    Nghịch lý công nghệ
-                  </span>
-                </div>
-                <CardTitle className="font-serif text-xl text-slate-800">
-                  Tại sao COBOL vẫn sống?
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  Dù được coi là Legacy Code (lạc hậu), nhưng hệ thống Ngân hàng
-                  lõi (Core Banking) vẫn dùng COBOL thay vì Java/.NET.
-                </p>
-                <div className="flex items-center gap-4 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                  <Database className="w-8 h-8 text-slate-400" />
-                  <div>
-                    <p className="font-bold text-slate-700 text-sm">
-                      Phủ định chưa hoàn tất
+                <CardHeader className="relative z-10 pb-2">
+                  <CardTitle className="flex items-center gap-2 text-lg font-medium text-blue-300">
+                    <Activity className="w-5 h-5" />
+                    Thị trường Lao động 2024
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <div className="mb-6">
+                    <p className="text-4xl md:text-5xl font-bold text-white tracking-tighter mb-2">
+                      Thiếu hụt
                     </p>
-                    <p className="text-xs text-slate-500">
-                      Cái cũ vẫn tồn tại song song vì độ ổn định quá cao.
+                    <p className="text-sm text-slate-400 font-light">
+                      Nhân sự vận hành hệ thống phân tán phức tạp
                     </p>
                   </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button
-                  variant="ghost"
-                  className="w-full text-blue-600 hover:text-blue-700 hover:bg-blue-50 text-xs font-bold uppercase tracking-wide"
-                >
-                  Đọc phân tích chi tiết <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </CardFooter>
-            </Card>
+
+                  <div className="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10">
+                    <p className="text-xs text-slate-300 italic leading-relaxed">
+                      Sự dịch chuyển lao động đòi hỏi công nghệ phải tinh gọn,
+                      giảm phụ thuộc vào vận hành thủ công.
+                    </p>
+                    <div className="mt-3 flex items-center justify-between">
+                      <span className="text-[10px] font-bold text-yellow-500 uppercase">
+                        Tổng cục Thống kê
+                      </span>
+                      <span className="text-[10px] text-slate-500">
+                        29/12/2024
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* COBOL CARD (Clean Style) */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Card className="bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-default hover:border-blue-300 h-full">
+                <CardHeader className="pb-2">
+                  <div className="flex justify-between items-start">
+                    <div className="flex items-center gap-2 bg-blue-50 px-3 py-1 rounded-full w-fit">
+                      <ShieldAlert className="w-4 h-4 text-blue-600" />
+                      <span className="text-[10px] font-bold text-blue-700 uppercase tracking-wider">
+                        Nghịch lý
+                      </span>
+                    </div>
+                  </div>
+                  <CardTitle className="text-xl font-serif text-slate-800 mt-3 group-hover:text-blue-700 transition-colors">
+                    Tại sao COBOL bất tử?
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    Hệ thống Ngân hàng lõi (Core Banking) vẫn chạy trên COBOL.
+                    Đây là minh chứng cho <strong>tính kế thừa</strong>: Cái mới
+                    không xóa bỏ hoàn toàn cái cũ nếu cái cũ vẫn còn giá trị cốt
+                    lõi.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge
+                      variant="secondary"
+                      className="bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200"
+                    >
+                      #LegacyCode
+                    </Badge>
+                    <Badge
+                      variant="secondary"
+                      className="bg-slate-100 text-slate-600 hover:bg-slate-200 border border-slate-200"
+                    >
+                      #Stability
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </div>
       </div>
