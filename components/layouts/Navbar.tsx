@@ -92,12 +92,12 @@ export default function Navbar() {
 
           {/* Report Link */}
           <a
-            href="https://docs.google.com/document/d/1RoOlRLLZDPnWxHNfTYS3LpOzWkwPVkE8O05hApt5xqM/edit?tab=t.7yw8w2wppjh7"
+            href="https://docs.google.com/document/d/1RoOlRLLZDPnWxHNfTYS3LpOzWkwPVkE8O05hApt5xqM/edit?tab=t.h9qzwv990ooq"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-yellow-600 transition-colors"
           >
-            <View className="w-4 h-4" /> Báo cáo
+            <View className="w-4 h-4" /> Xem báo cáo
           </a>
         </div>
 

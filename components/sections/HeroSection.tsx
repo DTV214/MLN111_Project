@@ -106,7 +106,7 @@ export default function HeroSection() {
           >
             <Sparkles className="w-4 h-4 text-yellow-500 fill-yellow-500 animate-pulse" />
             <span className="text-xs font-bold text-slate-800 tracking-widest uppercase">
-              Đề tài Nghiên cứu Khoa học 2024
+              Đề tài Nghiên cứu Khoa học 2026
             </span>
           </motion.div>
 
@@ -169,7 +169,7 @@ export default function HeroSection() {
                     Đội Ngũ Nghiên Cứu
                   </DialogTitle>
                   <DialogDescription className="text-center text-slate-500">
-                    Nhóm sinh viên thực hiện đề tài (K24 - FPTU)
+                    Nhóm sinh viên thực hiện đề tài (K18 - FPTU)
                   </DialogDescription>
                 </DialogHeader>
 
