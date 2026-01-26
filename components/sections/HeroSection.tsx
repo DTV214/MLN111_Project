@@ -28,17 +28,17 @@ const teamMembers = [
   {
     id: 1,
     name: "Tất Tinh Bảo",
-    mssv: "SE123456",
-    role: "Team Leader & Research",
+    mssv: "SE182842",
+    role: "Team Leader ,Reporter & Research",
     icon: <Lightbulb className="w-3 h-3" />,
     color: "bg-yellow-100 text-yellow-700 border-yellow-200",
     avatar: "https://github.com/shadcn.png", // Demo image
   },
   {
     id: 2,
-    name: "Trần Văn An",
-    mssv: "HS123457",
-    role: "Content Creator",
+    name: "Nguyễn Trần Việt An",
+    mssv: "SE184889",
+    role: "Content Creator & Research",
     icon: <PenTool className="w-3 h-3" />,
     color: "bg-green-100 text-green-700 border-green-200",
     avatar: "",
@@ -46,8 +46,8 @@ const teamMembers = [
   {
     id: 3,
     name: "Võ Thành Danh",
-    mssv: "HS123458",
-    role: "Frontend Developer",
+    mssv: "SE18252",
+    role: "Frontend Developer & Research",
     icon: <Code2 className="w-3 h-3" />,
     color: "bg-blue-100 text-blue-700 border-blue-200",
     avatar: "",
@@ -55,7 +55,7 @@ const teamMembers = [
   {
     id: 4,
     name: "Trần Gia Nguyên",
-    mssv: "HS123459",
+    mssv: "SE141092",
     role: "Presenter & Research",
     icon: <MonitorPlay className="w-3 h-3" />,
     color: "bg-purple-100 text-purple-700 border-purple-200",
@@ -64,8 +64,8 @@ const teamMembers = [
   {
     id: 5,
     name: "Ngô Bằng Giang",
-    mssv: "HS123459",
-    role: "Presenter & Reporter",
+    mssv: "SE184565",
+    role: "Presenter, Data Analyst & Research",
     icon: <MonitorPlay className="w-3 h-3" />,
     color: "bg-purple-100 text-purple-700 border-purple-200",
     avatar: "",
