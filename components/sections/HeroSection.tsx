@@ -46,7 +46,7 @@ const teamMembers = [
   {
     id: 3,
     name: "Võ Thành Danh",
-    mssv: "SE18252",
+    mssv: "SE182522",
     role: "Frontend Developer & Research",
     icon: <Code2 className="w-3 h-3" />,
     color: "bg-blue-100 text-blue-700 border-blue-200",
