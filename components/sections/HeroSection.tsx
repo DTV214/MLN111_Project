@@ -124,7 +124,7 @@ export default function HeroSection() {
             <br />
             {/* Phần Subtitle: Dưới góc nhìn... */}
             <span className="block mt-2 text-2xl md:text-4xl text-slate-600 font-light italic tracking-normal">
-              dưới góc nhìn quy luật phủ định của phủ định
+              dưới góc nhìn Chủ nghĩa duy vật biện chứng
             </span>
           </h1>
 

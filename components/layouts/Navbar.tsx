@@ -92,7 +92,7 @@ export default function Navbar() {
 
           {/* Report Link */}
           <a
-            href="https://docs.google.com/document/d/1RoOlRLLZDPnWxHNfTYS3LpOzWkwPVkE8O05hApt5xqM/edit?tab=t.h9qzwv990ooq"
+            href="https://docs.google.com/document/d/1QhQx2RjhOJ_ZwP4iuAdrQSRRKRMTLtwb7v22YxRfE18/edit?tab=t.0"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-yellow-600 transition-colors"
